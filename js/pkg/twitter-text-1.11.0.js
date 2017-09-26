@@ -1160,7 +1160,7 @@
     return result;
   };
 
-  var MAX_LENGTH = 140;
+  var MAX_LENGTH = 280;
 
   // Characters not allowed in Tweets
   var INVALID_CHARACTERS = [

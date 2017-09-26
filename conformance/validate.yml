@@ -25,14 +25,21 @@ tests:
       text: ""
       expected: false
 
-    - description: "Invalid Tweet: 141 characters"
+    - description: "Valid Tweet: 141 characters"
       text: "A lie gets halfway around the world before the truth has a chance to get its pants on. -- Winston Churchill (1874-1965) http://bit.ly/dJpywL"
-      expected: false
+      expected: true
 
-    - description: "Invalid Tweet: 141 characters (due to newline)"
+    - description: "Valid Tweet: 141 characters (due to newline)"
       text: "A lie gets halfway around the world before the truth has a chance to get its pants on. \n- Winston Churchill (1874-1965) http://bit.ly/dJpywL"
-      expected: false
+      expected: true
 
+    - description: "Valid Tweet: 280 characters"
+      text: "Originally, our constraint was 160 (limit of a text) minus username. But we noticed biz got 1 more than jack. For fairness, we chose 140. Now texts are unlimited. Also, we realize that 140 isn't fair - there are differences between languages. We're testing the limits. Hello 280!!"
+      expected: true
+
+    - description: "Invalid Tweet: 281 characters"
+      text: "XOriginally, our constraint was 160 (limit of a text) minus username. But we noticed biz got 1 more than jack. For fairness, we chose 140. Now texts are unlimited. Also, we realize that 140 isn't fair - there are differences between languages. We're testing the limits. Hello 280!!"
+      expected: false
   usernames:
     - description: "Valid username: a-z < 20 characters"
       text: "@username"
